@@ -8,6 +8,12 @@ body {
     color: var(--text-color);
 }
 
+.content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .title {
     text-align: center;
     margin-left: auto;
@@ -35,6 +41,7 @@ input[type=text]:disabled {
     width: fit-content;
     min-width: 3ch;
     outline: none;
+    text-decoration: none;
 }
 
 [contenteditable]:empty:before {
@@ -56,4 +63,28 @@ input[type=text]:disabled {
 
 .timer-controls {
     user-select: none;
+}
+
+.timers-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.timers-container * {
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    font-size: 1.2em;
+}
+
+.timer-title {
+    font-size: 3em;
+}
+
+.timer-display {
+    font-size: 5em;
 }
