@@ -42,3 +42,13 @@ input[type=text]:disabled {
     opacity: 75%;
     cursor: text;
 }
+
+.timer-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.timer-button img {
+    height: 1em;
+}
