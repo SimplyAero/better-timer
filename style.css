@@ -1,0 +1,44 @@
+:root {
+    --background-color: #060000;
+    --text-color: #f2eeee;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5em;
+    cursor: default;
+    user-select: none;
+}
+
+input[type=text] {
+    font-family: monospace;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text-color);
+    width: 10ex;
+}
+
+input[type=text]:disabled {
+    caret-color: transparent;
+}
+
+[contenteditable] {
+    width: fit-content;
+    min-width: 3ch;
+    outline: none;
+}
+
+[contenteditable]:empty:before {
+    content: attr(data-placeholder);
+    opacity: 75%;
+    cursor: text;
+}
