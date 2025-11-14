@@ -47,6 +47,7 @@ input[type=text]:disabled {
     background-color: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .timer-button img {
