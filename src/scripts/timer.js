@@ -107,6 +107,7 @@ function stopTimer(timer) {
 }
 
 function resetTimer(timer) {
+    stopTimer(timer);
     timer.currentTime = 0;
     handleCountdown(timer);
 }
@@ -158,7 +159,6 @@ function handleCountdown(timer) {
     timer.lastUpdate = Date.now();
     timer.rawString = raw.slice(-6);
     insertTimeString(timer.component.querySelector('.timer-display'), timer.rawString);
-
 }
 
 function handleTimers() {
