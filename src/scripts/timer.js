@@ -109,6 +109,7 @@ function stopTimer(timer) {
 function resetTimer(timer) {
     stopTimer(timer);
     timer.currentTime = 0;
+    timer.lastUpdate = Date.now();
     handleCountdown(timer);
 }
 
