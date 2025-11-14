@@ -122,6 +122,10 @@ function addListeners() {
         const timer = unitializedTimers.pop();
         const timerDisplay = timer.component.querySelector('.timer-display');
         timerDisplay.addEventListener('mouseup', (event) => handleTimerMouseUp(event, timer));
+        timerDisplay.addEventListener(
+            'pointerup',
+            (event) => handleTimerMouseUp(event, timer)
+        );
         timerDisplay.addEventListener('keydown', (event) => handleTimerKeyDown(event, timer));
         timerDisplay.addEventListener('blur', () => handleTimerBlur(timer));
         timer.component.querySelector('.timer-start').addEventListener(
