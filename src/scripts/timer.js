@@ -62,6 +62,17 @@ function handleTimeTyping(timer, target, digit) {
     target.selectionEnd = selectionStart + 2;
 }
 
+function handleDeletion(target, timer) {
+    const selectionStart = target.selectionStart;
+    const cursor = target.selectionEnd - Math.trunc(target.selectionStart / 3);
+    let raw = `${timer.rawString.slice(0, cursor - 1)}${timer.rawString.slice(cursor)}`
+    raw = raw.padStart(6, '0');
+    target.value = `${raw.slice(0, 2)}:${raw.slice(2, 4)}:${raw.slice(4)}`;
+    timer.rawString = raw;
+    target.selectionStart = selectionStart;
+    target.selectionEnd = selectionStart + 2;
+}
+
 function handleTimerMouseUp(event, timer) {
     if (timer.active) return;
     event.preventDefault();
@@ -80,6 +91,10 @@ function handleTimerKeyDown(event, timer) {
     }
     if (isFinite(event.key) && event.key !== '') {
         handleTimeTyping(timer, event.target, event.key);
+        return;
+    }
+    if (event.key === 'Backspace') {
+        handleDeletion(event.target, timer);
     }
 }
 
