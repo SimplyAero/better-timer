@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+        "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1.0in" height="1.0in"
+     viewBox="0 0 100 100">
+    <polygon id="Add"
+             fill="green"
+             stroke="green"
+             stroke-width="1"
+             points="0,40 40,40 40,0 60,0 60,40 100,40 100,60 60,60 60,100 40,100 40,60 0,60"
+    />
+</svg>
