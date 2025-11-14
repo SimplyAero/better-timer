@@ -170,9 +170,9 @@ function removeTimer(timer) {
 
 function handleCountdown(timer) {
     const timeDelta = timer.time - timer.currentTime;
-    let raw = Math.trunc(timeDelta / 3600).toString().padStart(2, '0')
-      + Math.trunc((timeDelta % 3600) / 60).toString().padStart(2, '0')
-      + Math.ceil(timeDelta % 60).toString().padStart(2, '0');
+    let raw = Math.trunc(Math.ceil(timeDelta) / 3600).toString().padStart(2, '0')
+      + Math.trunc((Math.ceil(timeDelta) % 3600) / 60).toString().padStart(2, '0')
+      + (Math.ceil(timeDelta) % 60).toString().padStart(2, '0');
     timer.currentTime += (Date.now() - timer.lastUpdate) / 1000;
     timer.lastUpdate = Date.now();
     timer.rawString = raw.slice(-6);
