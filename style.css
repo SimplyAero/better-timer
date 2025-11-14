@@ -88,3 +88,7 @@ input[type=text]:disabled {
 .timer-display {
     font-size: 5em;
 }
+
+.timer-audio {
+    display: none;
+}

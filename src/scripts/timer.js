@@ -4,6 +4,10 @@ const newTimers = [];
 const unitializedTimers = [];
 let timers = [];
 
+function playSound(timer) {
+    timer.component.querySelector('.timer-audio').play();
+}
+
 function handleTimeSelection(target, delta=0) {
     if (delta) {
         target.selectionStart = Math.min(
@@ -177,6 +181,7 @@ function handleTimers() {
         if ((timer.time - timer.currentTime) <= 0) {
             timer.currentTime = timer.time;
             stopTimer(timer);
+            playSound(timer);
         }
     }
     requestAnimationFrame(handleTimers)
