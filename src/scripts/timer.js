@@ -2,7 +2,7 @@ import fetchTemplate from "./util/fetch-template.js";
 
 const newTimers = [];
 const unitializedTimers = [];
-const timers = [];
+let timers = [];
 
 function handleTimeSelection(target, delta=0) {
     if (delta) {
@@ -132,6 +132,10 @@ function addListeners() {
             'click',
             () => resetTimer(timer)
         );
+        timer.component.querySelector(".timer-delete").addEventListener(
+          'click',
+          () => removeTimer(timer)
+        );
         timers.push(timer);
     }
 }
@@ -149,6 +153,11 @@ function addTimer(containerSelector) {
         active: false
     });
     requestAnimationFrame(createTimers);
+}
+
+function removeTimer(timer) {
+    timer.component.parentElement.removeChild(timer.component)
+    timers = timers.filter(element => element !== timer);
 }
 
 function handleCountdown(timer) {
