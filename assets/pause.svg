@@ -3,17 +3,18 @@
               "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="0.213333in" height="0.213333in"
-     viewBox="0 0 64 64">
-  <path id="Pause"
-        fill="none" stroke="black" stroke-width="1"
-        d="M 38.00,0.00
-           C 38.00,0.00 64.00,0.00 64.00,0.00
-             64.00,0.00 64.00,64.00 64.00,64.00
-             64.00,64.00 38.00,64.00 38.00,64.00
-             38.00,64.00 38.00,0.00 38.00,0.00M 0.00,64.00
-           C 0.00,64.00 0.00,0.00 0.00,0.00
-             0.00,0.00 25.00,0.00 25.00,0.00
-             25.00,0.00 25.00,64.00 25.00,64.00
-             25.00,64.00 0.00,64.00 0.00,64.00" />
+     width="1.0in" height="1.0in"
+     viewBox="0 0 100 100">
+  <polygon id="Pause1"
+           fill="white"
+           stroke="white"
+           stroke-width="1"
+           points="0,0 40,0 40,100 0,100"
+  />
+  <polygon id="Pause2"
+           fill="white"
+           stroke="white"
+           stroke-width="1"
+           points="60,0 100,0 100,100 60,100"
+  />
 </svg>

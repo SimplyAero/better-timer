@@ -3,13 +3,12 @@
               "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="0.213333in" height="0.213333in"
-     viewBox="0 0 64 64">
-  <path id="Stop"
-        fill="none" stroke="black" stroke-width="1"
-        d="M 0.00,0.00
-           C 0.00,0.00 64.00,0.00 64.00,0.00
-             64.00,0.00 64.00,64.00 64.00,64.00
-             64.00,64.00 0.00,64.00 0.00,64.00
-             0.00,64.00 0.00,0.00 0.00,0.00" />
+     width="1.0in" height="1.0in"
+     viewBox="0 0 100 100">
+  <polygon id="Pause1"
+           fill="white"
+           stroke="white"
+           stroke-width="1"
+           points="0,0 100,0 100,100 0,100"
+  />
 </svg>
