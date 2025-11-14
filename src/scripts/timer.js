@@ -46,7 +46,7 @@ function normalizeTime(timer) {
         + parseInt(stringChunks[2]);
     stringChunks[0] = Math.trunc(timer.time / 3600).toString().substring(-2).padStart(2, '0');
     stringChunks[1] = Math.trunc((timer.time % 3600) / 60).toString().substring(-2).padStart(2, '0');
-    stringChunks[2] = (timer.time % 60).toString().substring(-2).padStart(2, '0');
+    stringChunks[2] = Math.ceil(timer.time % 60).toString().substring(-2).padStart(2, '0');
     timer.rawString = stringChunks.join('');
     insertTimeString(display, timer.rawString)
 }
@@ -168,7 +168,7 @@ function handleCountdown(timer) {
     const timeDelta = timer.time - timer.currentTime;
     let raw = Math.trunc(timeDelta / 3600).toString().padStart(2, '0')
       + Math.trunc((timeDelta % 3600) / 60).toString().padStart(2, '0')
-      + Math.trunc(timeDelta % 60).toString().padStart(2, '0');
+      + Math.ceil(timeDelta % 60).toString().padStart(2, '0');
     timer.currentTime += (Date.now() - timer.lastUpdate) / 1000;
     timer.lastUpdate = Date.now();
     timer.rawString = raw.slice(-6);
@@ -180,6 +180,7 @@ function handleTimers() {
         handleCountdown(timer);
         if ((timer.time - timer.currentTime) <= 0) {
             timer.currentTime = timer.time;
+            handleCountdown(timer);
             stopTimer(timer);
             playSound(timer);
         }
